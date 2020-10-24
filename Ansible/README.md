@@ -6,6 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
+  - ![Install Load Balancer Playbook](https://github.com/jmarti1226/cyber-sec/blob/main/Ansible/pentest.yml)
   - ![Filebeat Playbook](https://github.com/jmarti1226/cyber-sec/blob/main/Ansible/filebeat-playbook.yml)
   - ![Metricbeat Playbook](https://github.com/jmarti1226/cyber-sec/blob/main/Ansible/metricbeat-playbook.yml)
   - ![Install ELK Playbook](https://github.com/jmarti1226/cyber-sec/blob/main/Ansible/install-elk.yml)
