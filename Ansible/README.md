@@ -54,8 +54,6 @@ A summary of the access policies in place can be found in the table below.
 | Name     | Publicly Accessible | Allowed IP Addresses       |
 |----------|---------------------|----------------------------|
 | Jump Box | No                  | 10.0.0.7 10.0.0.8 10.0.0.5 |
-|          |                     |                            |
-|          |                     |                            |
 
 ### Elk Configuration
 
