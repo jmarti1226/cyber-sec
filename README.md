@@ -1,2 +1,2 @@
 # cyber-sec
-A couple of my projects that demonstrate what I learned in my cyber security course
+A couple of my projects that demonstrate what I've learned in my cyber security course
