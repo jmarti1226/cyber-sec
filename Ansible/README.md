@@ -2,11 +2,14 @@
 
 The files in this repository were used to configure the network depicted below.
 
-- /Diagrams/ELK_Stack_Project_1_Day_3
+![Diagram](https://github.com/jmarti1226/cyber-sec/blob/main/Diagrams/ELK_Stack_Project_1_Day_2.jpg)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-  - /Ansible/filebeat-playbook.yml
+  - ![Install Load Balancer Playbook](https://github.com/jmarti1226/cyber-sec/blob/main/Ansible/pentest.yml)
+  - ![Filebeat Playbook](https://github.com/jmarti1226/cyber-sec/blob/main/Ansible/filebeat-playbook.yml)
+  - ![Metricbeat Playbook](https://github.com/jmarti1226/cyber-sec/blob/main/Ansible/metricbeat-playbook.yml)
+  - ![Install ELK Playbook](https://github.com/jmarti1226/cyber-sec/blob/main/Ansible/install-elk.yml)
 
 This document contains the following details:
 - Description of the Topology
@@ -22,7 +25,7 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly reliable, in addition to restricting traffic to the network.
-The load balancer provides an external IP address, thereby protecting the individual servers from public access.The load balancer receives any traffic that comes into the website and distributes it across multiple servers. Using a jump box allows us to deploy containers to each server at once rather than accessing each individual server.
+The load balancer provides an external IP address, thereby protecting the individual servers from public access. The load balancer receives any traffic that comes into the website and distributes it across multiple servers. Using a jump box allows us to deploy containers to each server at once rather than accessing each individual server.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system metrics.
 Filebeat collects data about the file system. 
@@ -45,15 +48,13 @@ Only the Load Balancer can accept connections from the Internet. Access to this 
 - For this setup only my personal IP address is allowed.
 
 Machines within the network can only be accessed by the Jump Box Machine.
-- IP address: 40.122.166.112
+- Jump Box Machine Dynamic Public IP address
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses       |
 |----------|---------------------|----------------------------|
 | Jump Box | No                  | 10.0.0.7 10.0.0.8 10.0.0.5 |
-|          |                     |                            |
-|          |                     |                            |
 
 ### Elk Configuration
 
@@ -66,7 +67,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-- /Ansible/ELK_docker_ps_output.png
+![Docker ps output](https://github.com/jmarti1226/cyber-sec/blob/main/Ansible/ELK_docker_ps_output.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -88,5 +89,10 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the filebeat-playbook.yml file to /etc/ansible.
+<<<<<<< HEAD
 - Update the configuration file to include the IP address of the ELK VM
 - Run the playbook, and navigate to http://[ELK.VM.IP]:5601/app/kibana to check that the installation worked as expected.
+=======
+- Update the configuration file to include the Private IP address of the ELK VM
+- Run the playbook, and navigate to http://[ELK.VM.IP]:5601/app/kibana to check that the installation worked as expected.
+>>>>>>> 1282b9c6720474860359f2ff031a0679ac5cb341
