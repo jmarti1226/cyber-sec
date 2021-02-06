@@ -42,7 +42,7 @@ The configuration details of each machine may be found below:
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Load Balancer can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- For this setup only my personal IP addresses is allowed.
+- For this setup only my personal IP address is allowed.
 
 Machines within the network can only be accessed by the Jump Box Machine.
 - IP address: 40.122.166.112
@@ -85,9 +85,8 @@ These Beats allow us to collect the following information from each machine:
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
+
 SSH into the control node and follow the steps below:
 - Copy the filebeat-playbook.yml file to /etc/ansible.
 - Update the configuration file to include the IP address of the ELK VM
 - Run the playbook, and navigate to http://[ELK.VM.IP]:5601/app/kibana to check that the installation worked as expected.
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
