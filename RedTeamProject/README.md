@@ -24,9 +24,10 @@ I started by attacking the Target machine:
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/wordpress_scan.png)
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/wordpress_scan2.png)
 
-The guide says a flag is discoverable by enumerating the site but the tool I used (wpscan) did not show me any flag. After further research and searching I happened upon the flag in the source code for the services webpage. I am not sure if the guide was incorrect or if my efforts were misguided, regardless here is the flag: 
+    The guide says a flag is discoverable by enumerating the site but the tool I used (wpscan) did not show me any flag. After further research and searching I happened upon the flag in the source code for the services webpage. I am not sure if the guide was incorrect or if my efforts were misguided, regardless here is the flag: 
 
-Flag1 can be found in the page source for 192.168.1.110/services:
+    Flag1 can be found in the page source for 192.168.1.110/services:
+
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/flag1_pagesource.png)
 
 4. Use SSH to gain a user shell. Two flags can be discovered at this step.
@@ -34,18 +35,19 @@ Flag1 can be found in the page source for 192.168.1.110/services:
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/hydra_michael.png)
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/ssh_michael.png)
 
-Flag1, it turns out, can also be found after logging in as Michael and running grep for a flag:
+    Flag1, it turns out, can also be found after logging in as Michael and running grep for a flag:
 
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/flag1_grep.png)
 
-Flag2 can be found the same was as the first flag using grep:
+    Flag2 can be found the same was as the first flag using grep:
 
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/flag2.png)
 
 
 5. Find the MySQL database password.
 
-Found in wp-config.php file in /var/www/html/wordpress
+    Found in wp-config.php file in /var/www/html/wordpress
+
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/MySQL_login.png)
 
 6. Use the credentials to log into MySQL and dump WordPress user password hashes.
@@ -53,13 +55,14 @@ Found in wp-config.php file in /var/www/html/wordpress
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/logged_into_mysql.png)
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/wp_hashes.png)
 
-A third flag, Flag3, can be found in the MySQL database: wp_post (Flag 4 is also shown but I doubt that this was intentional):
+    A third flag, Flag3, can be found in the MySQL database: wp_post (Flag 4 is also shown but I doubt that this was intentional):
 
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/flag3.png)
 
 7. Crack password hashes with john.
 
-I copied the hashes into a text file and had John crack the hashes:
+    I copied the hashes into a text file and had John crack the hashes:
+
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/john_output.png)
 
 8. Secure a user shell as the user whose password you cracked.
@@ -68,12 +71,14 @@ I copied the hashes into a text file and had John crack the hashes:
 
 9. Escalate to root. One flag can be discovered after this step.
 
-After logging in as Steven I checked the user's sudo privileges:
+    After logging in as Steven I checked the user's sudo privileges:
+
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/sudo_priv.png)
 
-I then used the following command to gain root access:
+    I then used the following command to gain root access:
+
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/python_root.png)
 
-Flag4 was found using the locate command for flag4:
+    Flag4 was found using the locate command for flag4:
 
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/flag4.png)
