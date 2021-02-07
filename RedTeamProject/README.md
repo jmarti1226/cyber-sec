@@ -46,7 +46,7 @@ Flag2 can be found the same was as the first flag using grep:
 
 ## 5. Find the MySQL database password.
 
-    Found in wp-config.php file in /var/www/html/wordpress
+Found in wp-config.php file in /var/www/html/wordpress
 
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/MySQL_login.png)
 
