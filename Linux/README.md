@@ -1,4 +1,8 @@
-# sys_info.sh
+# Bash Scripting
+
+Some scripts I made.
+
+## sys_info.sh
 
 The first sys_info is a script that prints out:
 
@@ -12,11 +16,11 @@ The CPU info.
 The Disk usage.
 The currently logged on users.
 
-# sys_info2.sh
+## sys_info2.sh
 
 The second one outputs the same information but now it outputs tbe information to a file. The script first checks if the file and directory exists, if the file exists then it deletes it to then make a new one. If the directory doesn't exist then it makes it.
 
-# system.sh
+## system.sh
 
 This script does the following:
 

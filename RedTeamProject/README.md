@@ -8,18 +8,18 @@ You will then report back all your findings to both the SOC manager and the Engi
 
 I started by attacking the Target machine:
 
-# 1. Scan the network to identify the IP addresses of Target 1.
+## 1. Scan the network to identify the IP addresses of Target 1.
 
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/initial_nmap_results.png)
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/initial_nmap_results2.png)
 
-# 2. Document all exposed ports and services.
+## 2. Document all exposed ports and services.
 
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/vuln_scan.png)
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/vuln_scan2.png)
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/vuln_scan3.png)
 
-# 3. Enumerate the WordPress site. One flag is discoverable after this step.
+## 3. Enumerate the WordPress site. One flag is discoverable after this step.
 
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/wordpress_scan.png)
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/wordpress_scan2.png)
@@ -30,7 +30,7 @@ Flag1 can be found in the page source for 192.168.1.110/services:
 
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/flag1_pagesource.png)
 
-# 4. Use SSH to gain a user shell. Two flags can be discovered at this step.
+## 4. Use SSH to gain a user shell. Two flags can be discovered at this step.
 
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/hydra_michael.png)
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/ssh_michael.png)
@@ -44,13 +44,13 @@ Flag2 can be found the same was as the first flag using grep:
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/flag2.png)
 
 
-# 5. Find the MySQL database password.
+## 5. Find the MySQL database password.
 
     Found in wp-config.php file in /var/www/html/wordpress
 
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/MySQL_login.png)
 
-# 6. Use the credentials to log into MySQL and dump WordPress user password hashes.
+## 6. Use the credentials to log into MySQL and dump WordPress user password hashes.
 
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/logged_into_mysql.png)
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/wp_hashes.png)
@@ -59,17 +59,17 @@ A third flag, Flag3, can be found in the MySQL database: wp_post (Flag 4 is also
 
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/flag3.png)
 
-# 7. Crack password hashes with john.
+## 7. Crack password hashes with john.
 
 I copied the hashes into a text file and had John crack the hashes:
 
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/john_output.png)
 
-# 8. Secure a user shell as the user whose password you cracked.
+## 8. Secure a user shell as the user whose password you cracked.
 
 ![Screenshot](https://github.com/jmarti1226/cyber-sec/blob/main/RedTeamProject/Images/steven_elevated.png)
 
-# 9. Escalate to root. One flag can be discovered after this step.
+## 9. Escalate to root. One flag can be discovered after this step.
 
 After logging in as Steven I checked the user's sudo privileges:
 
