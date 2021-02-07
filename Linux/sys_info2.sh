@@ -5,17 +5,19 @@ ip=$(ip addr | head -9 | tail -1)
 suids=$(sudo find / -type f -perm /4000 2> /dev/null)
 files=('/etc/passwd' '/etc/shadow' '/etc/hosts')
 
+#checks if the text file exists
 if [ -f $output ]
 then
 rm $output
 fi
 
+#checks if the directory exists
 if [ ! -d $HOME/research4 ]
 then
 mkdir $HOME/research4
 fi
 
-echo "Title Goes Here" >> $output
+echo "A Quick System Audit Script" >> $output
 date >> $output
 echo "Machine Type Info:" echo $MACHTYPE >> $output
 echo -e "Uname info: $(uname -a) \n" >> $output
