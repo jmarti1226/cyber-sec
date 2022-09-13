@@ -4,12 +4,12 @@ The files in this repository were used to configure the network depicted below.
 
 ![Diagram](https://github.com/jmarti1226/cyber-sec/blob/main/Diagrams/ELK_Stack_Project_1_Day_2.jpg)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK (Elasticsearch, Logstash, Kibana) deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-  - ![Install Load Balancer Playbook](https://github.com/jmarti1226/cyber-sec/blob/main/A%20Virtual%20Network%20Deployment/pentest.yml)
-  - ![Filebeat Playbook](https://github.com/jmarti1226/cyber-sec/blob/main/A%20Virtual%20Network%20Deployment/filebeat-playbook.yml)
-  - ![Metricbeat Playbook](https://github.com/jmarti1226/cyber-sec/blob/main/A%20Virtual%20Network%20Deployment/metricbeat-playbook.yml)
-  - ![Install ELK Playbook](https://github.com/jmarti1226/cyber-sec/blob/main/A%20Virtual%20Network%20Deployment/install-elk.yml)
+  - ![Install Load Balancer Playbook](https://github.com/jmarti1226/cyber-sec/blob/main/A_Virtual_Network_Deployment/pentest.yml)
+  - ![Filebeat Playbook](https://github.com/jmarti1226/cyber-sec/blob/main/A_Virtual_Network_Deployment/filebeat-playbook.yml)
+  - ![Metricbeat Playbook](https://github.com/jmarti1226/cyber-sec/blob/main/A_Virtual_Network_Deployment/metricbeat-playbook.yml)
+  - ![Install ELK Playbook](https://github.com/jmarti1226/cyber-sec/blob/main/A_Virtual_Network_Deployment/install-elk.yml)
 
 This document contains the following details:
 - Description of the Topology
@@ -67,7 +67,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![Docker ps output](https://github.com/jmarti1226/cyber-sec/blob/main/A%20Virtual%20Network%20Deployment/ELK_docker_ps_output.png)
+![Docker ps output](https://github.com/jmarti1226/cyber-sec/blob/main/A_Virtual_Network_Deployment/ELK_docker_ps_output.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -89,10 +89,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the filebeat-playbook.yml file to /etc/ansible.
-<<<<<<< HEAD
 - Update the configuration file to include the IP address of the ELK VM
 - Run the playbook, and navigate to http://[ELK.VM.IP]:5601/app/kibana to check that the installation worked as expected.
-=======
 - Update the configuration file to include the Private IP address of the ELK VM
 - Run the playbook, and navigate to http://[ELK.VM.IP]:5601/app/kibana to check that the installation worked as expected.
->>>>>>> 1282b9c6720474860359f2ff031a0679ac5cb341
