@@ -1,6 +1,6 @@
 # Bash Scripting
 
-Some scripts I made.
+Some scripts I made using Linux.
 
 ## sys_info.sh
 
